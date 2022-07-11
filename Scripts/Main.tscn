@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Main" type="Node"]
+
+[node name="Score Timer" type="Timer" parent="."]
+
+[node name="Mob Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Start Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Start Position" type="Position2D" parent="."]
+position = Vector2( 240, 450 )
+
+[node name="Mob Path" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mob Path"]
