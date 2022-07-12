@@ -1,6 +1,6 @@
 extends Area2D
 
-signal hit
+signal hit_event
 
 export var speed = 400
 var screen_size
@@ -53,6 +53,6 @@ func animatedRight(velocity):
 
 func _on_Player_body_entered(body):
 	hide()
-	emit_signal(hit)
+	emit_signal(hit_event)
 
 	$CollisionShape2D.set_deferred("disabled", true)
